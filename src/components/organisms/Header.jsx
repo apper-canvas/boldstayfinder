@@ -174,8 +174,9 @@ const Header = () => {
           isOpen={showAuthModal}
           onClose={() => setShowAuthModal(false)}
         />
-      )}
+)}
     </>
   );
+};
 
 export default Header;

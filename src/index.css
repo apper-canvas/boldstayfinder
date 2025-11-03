@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* React Toastify CSS */
+@import 'react-toastify/dist/ReactToastify.css';
+
+/* Toast overrides */
+.Toastify__toast-container {
+  width: 400px;
+  max-width: 90vw;
+}
+
+.Toastify__toast {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Toastify__toast--success {
+  background: #00A699;
+}
+
+.Toastify__toast--error {
+  background: #FF385C;
+}
+
+.Toastify__toast--warning {
+  background: #FFB400;
+}
+
+.Toastify__toast--info {
+  background: #008489;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .card-hover {
+    transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+  
+  .heart-animation {
+    transition: transform 100ms ease-out;
+  }
+  
+  .heart-animation:active {
+    transform: scale(1.2);
+  }
+}

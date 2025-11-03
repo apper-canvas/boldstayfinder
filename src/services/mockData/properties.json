@@ -1,0 +1,590 @@
+[
+  {
+    "Id": 1,
+    "title": "Cozy Downtown Loft with City Views",
+    "description": "Experience urban living at its finest in this stylish downtown loft featuring floor-to-ceiling windows, exposed brick walls, and modern amenities. Located in the heart of the city with easy access to restaurants, shops, and public transportation. Perfect for business travelers or couples seeking a sophisticated city escape.",
+    "propertyType": "Loft",
+    "location": {
+      "address": "123 Main Street, Apt 12A",
+      "city": "New York",
+      "country": "United States",
+      "coordinates": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    },
+    "pricing": {
+      "nightlyRate": 180,
+      "cleaningFee": 75,
+      "serviceFee": 25,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 2,
+      "bedrooms": 1,
+      "beds": 1,
+      "bathrooms": 1
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1515263487990-61b07816b00a?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Air conditioning", "Kitchen", "Washer", "TV", "Elevator", "Gym"],
+    "rating": 4.8,
+    "reviewCount": 124,
+    "host": {
+      "id": "h1",
+      "name": "Sarah Mitchell",
+      "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "March 2020",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 2,
+      "maxStay": 30
+    }
+  },
+  {
+    "Id": 2,
+    "title": "Oceanfront Villa with Private Beach",
+    "description": "Wake up to stunning ocean views every morning in this luxurious beachfront villa. Features include a private beach, infinity pool, gourmet kitchen, and spacious outdoor entertaining areas. This Mediterranean-style property offers the perfect blend of elegance and comfort for an unforgettable coastal retreat.",
+    "propertyType": "Villa",
+    "location": {
+      "address": "456 Coastal Highway",
+      "city": "Malibu",
+      "country": "United States",
+      "coordinates": {
+        "lat": 34.0259,
+        "lng": -118.7798
+      }
+    },
+    "pricing": {
+      "nightlyRate": 650,
+      "cleaningFee": 200,
+      "serviceFee": 85,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 8,
+      "bedrooms": 4,
+      "beds": 5,
+      "bathrooms": 4
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Pool", "Private beach", "Kitchen", "Air conditioning", "Parking", "Hot tub", "Fireplace", "Balcony"],
+    "rating": 4.9,
+    "reviewCount": 87,
+    "host": {
+      "id": "h2",
+      "name": "Michael Chen",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "July 2019",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 3,
+      "maxStay": 14
+    }
+  },
+  {
+    "Id": 3,
+    "title": "Charming Mountain Cabin Retreat",
+    "description": "Escape to this cozy log cabin nestled in the heart of the Rocky Mountains. Perfect for nature lovers, this rustic yet comfortable retreat features a stone fireplace, wraparound deck, and hiking trails right from your doorstep. Enjoy stargazing from the hot tub or cozy up inside with board games and hot cocoa.",
+    "propertyType": "Cabin",
+    "location": {
+      "address": "789 Pine Ridge Trail",
+      "city": "Aspen",
+      "country": "United States",
+      "coordinates": {
+        "lat": 39.1911,
+        "lng": -106.8175
+      }
+    },
+    "pricing": {
+      "nightlyRate": 220,
+      "cleaningFee": 100,
+      "serviceFee": 35,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 4,
+      "bathrooms": 2
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520637836862-4d197d17c11a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Fireplace", "Kitchen", "Parking", "Hot tub", "Balcony", "Washer"],
+    "rating": 4.7,
+    "reviewCount": 156,
+    "host": {
+      "id": "h3",
+      "name": "Emma Rodriguez",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "November 2018",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 2,
+      "maxStay": 21
+    }
+  },
+  {
+    "Id": 4,
+    "title": "Modern City Apartment with Rooftop Access",
+    "description": "Stylish and contemporary apartment in the vibrant downtown district. Features modern furnishings, a fully equipped kitchen, and exclusive access to the building's rooftop terrace with panoramic city views. Walking distance to museums, theaters, and the best restaurants the city has to offer.",
+    "propertyType": "Apartment",
+    "location": {
+      "address": "321 Urban Ave, Unit 8B",
+      "city": "Chicago",
+      "country": "United States",
+      "coordinates": {
+        "lat": 41.8781,
+        "lng": -87.6298
+      }
+    },
+    "pricing": {
+      "nightlyRate": 155,
+      "cleaningFee": 60,
+      "serviceFee": 22,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "bathrooms": 2
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Air conditioning", "Kitchen", "Elevator", "Gym", "TV", "Balcony"],
+    "rating": 4.6,
+    "reviewCount": 98,
+    "host": {
+      "id": "h4",
+      "name": "David Kim",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "February 2021",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 1,
+      "maxStay": 28
+    }
+  },
+  {
+    "Id": 5,
+    "title": "Historic Brownstone in Greenwich Village",
+    "description": "Step back in time while enjoying modern comforts in this beautifully restored 19th-century brownstone. Located in the heart of Greenwich Village, this elegant townhouse features original architectural details, a private garden, and proximity to iconic NYC landmarks, cafes, and boutiques.",
+    "propertyType": "Townhouse",
+    "location": {
+      "address": "567 Washington Square",
+      "city": "New York",
+      "country": "United States",
+      "coordinates": {
+        "lat": 40.7311,
+        "lng": -74.0024
+      }
+    },
+    "pricing": {
+      "nightlyRate": 320,
+      "cleaningFee": 120,
+      "serviceFee": 45,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 4,
+      "bathrooms": 3
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1556909114-5ba7bf2bf6fd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Kitchen", "Air conditioning", "Fireplace", "Washer", "TV", "Balcony"],
+    "rating": 4.8,
+    "reviewCount": 203,
+    "host": {
+      "id": "h5",
+      "name": "Jennifer Thompson",
+      "avatar": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "August 2017",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 3,
+      "maxStay": 14
+    }
+  },
+  {
+    "Id": 6,
+    "title": "Lakeside Cottage with Private Dock",
+    "description": "Peaceful lakefront cottage offering tranquility and natural beauty. Features include a private dock, kayaks, fishing equipment, and a screened porch perfect for morning coffee or evening cocktails. The cottage has been thoughtfully updated while maintaining its rustic charm and connection to nature.",
+    "propertyType": "Cottage",
+    "location": {
+      "address": "890 Lakeshore Drive",
+      "city": "Lake Tahoe",
+      "country": "United States",
+      "coordinates": {
+        "lat": 39.0968,
+        "lng": -120.0324
+      }
+    },
+    "pricing": {
+      "nightlyRate": 275,
+      "cleaningFee": 85,
+      "serviceFee": 38,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 3,
+      "bathrooms": 1
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Kitchen", "Fireplace", "Parking", "Balcony", "Washer"],
+    "rating": 4.9,
+    "reviewCount": 67,
+    "host": {
+      "id": "h6",
+      "name": "Robert Wilson",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "May 2019",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 2,
+      "maxStay": 10
+    }
+  },
+  {
+    "Id": 7,
+    "title": "Desert Oasis Adobe House",
+    "description": "Unique southwestern-style adobe home surrounded by stunning desert landscapes. This architectural gem features traditional vigas, saltillo tile floors, and a private courtyard with fountain. Perfect for those seeking a peaceful retreat with incredible sunrise and sunset views over the desert mountains.",
+    "propertyType": "House",
+    "location": {
+      "address": "123 Desert Rose Road",
+      "city": "Santa Fe",
+      "country": "United States",
+      "coordinates": {
+        "lat": 35.6870,
+        "lng": -105.9378
+      }
+    },
+    "pricing": {
+      "nightlyRate": 195,
+      "cleaningFee": 95,
+      "serviceFee": 28,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "bathrooms": 2
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Kitchen", "Air conditioning", "Fireplace", "Parking", "Balcony"],
+    "rating": 4.7,
+    "reviewCount": 89,
+    "host": {
+      "id": "h7",
+      "name": "Maria Gonzalez",
+      "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "December 2020",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 2,
+      "maxStay": 21
+    }
+  },
+  {
+    "Id": 8,
+    "title": "Luxury High-Rise Condo with City Views",
+    "description": "Experience the pinnacle of urban luxury in this stunning high-rise condominium. Floor-to-ceiling windows offer breathtaking city views, while premium finishes and top-of-the-line appliances provide unmatched comfort. Building amenities include concierge service, fitness center, and rooftop pool.",
+    "propertyType": "Condo",
+    "location": {
+      "address": "999 Skyline Boulevard, 45th Floor",
+      "city": "Miami",
+      "country": "United States",
+      "coordinates": {
+        "lat": 25.7617,
+        "lng": -80.1918
+      }
+    },
+    "pricing": {
+      "nightlyRate": 285,
+      "cleaningFee": 110,
+      "serviceFee": 42,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "bathrooms": 2
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560184897-67f4a3f9a7fa?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560185009-5bf9f2849488?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560185127-1b1c2d5b4b50?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560184897-c3d78c6e7095?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Pool", "Gym", "Air conditioning", "Kitchen", "Elevator", "TV", "Balcony"],
+    "rating": 4.8,
+    "reviewCount": 142,
+    "host": {
+      "id": "h8",
+      "name": "Carlos Martinez",
+      "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "April 2018",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 3,
+      "maxStay": 30
+    }
+  },
+  {
+    "Id": 9,
+    "title": "Rustic Farmhouse with Vineyard Views",
+    "description": "Charming restored farmhouse nestled among rolling vineyard hills. This property offers a perfect blend of rustic charm and modern amenities, featuring a gourmet kitchen, wine cellar, and expansive outdoor spaces. Wake up to sunrise over the vineyards and enjoy wine tastings at nearby world-class wineries.",
+    "propertyType": "Farmhouse",
+    "location": {
+      "address": "456 Vineyard Lane",
+      "city": "Napa Valley",
+      "country": "United States",
+      "coordinates": {
+        "lat": 38.2975,
+        "lng": -122.2869
+      }
+    },
+    "pricing": {
+      "nightlyRate": 420,
+      "cleaningFee": 150,
+      "serviceFee": 58,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 8,
+      "bedrooms": 4,
+      "beds": 5,
+      "bathrooms": 3
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600607688960-e095bb2c26d0?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Kitchen", "Fireplace", "Parking", "Hot tub", "Washer", "TV", "Balcony"],
+    "rating": 4.9,
+    "reviewCount": 76,
+    "host": {
+      "id": "h9",
+      "name": "Sophie Laurent",
+      "avatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "June 2017",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 2,
+      "maxStay": 14
+    }
+  },
+  {
+    "Id": 10,
+    "title": "Beachfront Bungalow with Ocean Access",
+    "description": "Wake up steps from the sand in this delightful beachfront bungalow. Features include direct beach access, outdoor shower, hammock for afternoon naps, and a fully equipped kitchen for preparing fresh seafood. This is the perfect spot for a romantic getaway or small family beach vacation.",
+    "propertyType": "Bungalow",
+    "location": {
+      "address": "789 Ocean Drive",
+      "city": "Key West",
+      "country": "United States",
+      "coordinates": {
+        "lat": 24.5551,
+        "lng": -81.7821
+      }
+    },
+    "pricing": {
+      "nightlyRate": 310,
+      "cleaningFee": 90,
+      "serviceFee": 45,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "bathrooms": 2
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1571770095004-6b61b1cf308a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Kitchen", "Air conditioning", "Private beach", "Parking", "Balcony"],
+    "rating": 4.8,
+    "reviewCount": 128,
+    "host": {
+      "id": "h10",
+      "name": "James Anderson",
+      "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "January 2019",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 3,
+      "maxStay": 10
+    }
+  },
+  {
+    "Id": 11,
+    "title": "Urban Studio with Designer Furnishings",
+    "description": "Sleek and sophisticated studio apartment in the trendy arts district. Features curated designer furniture, smart home technology, and a private balcony overlooking the city. Perfect for solo travelers or couples who appreciate style and convenience in the heart of the cultural scene.",
+    "propertyType": "Studio",
+    "location": {
+      "address": "321 Art District Avenue",
+      "city": "Los Angeles",
+      "country": "United States",
+      "coordinates": {
+        "lat": 34.0522,
+        "lng": -118.2437
+      }
+    },
+    "pricing": {
+      "nightlyRate": 135,
+      "cleaningFee": 55,
+      "serviceFee": 20,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 2,
+      "bedrooms": 0,
+      "beds": 1,
+      "bathrooms": 1
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-444dcb4c744e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560448075-bb485b067938?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1560448076-7cd6b95c6c8f?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Air conditioning", "Kitchen", "TV", "Balcony"],
+    "rating": 4.6,
+    "reviewCount": 94,
+    "host": {
+      "id": "h11",
+      "name": "Ashley Davis",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "September 2020",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 1,
+      "maxStay": 21
+    }
+  },
+  {
+    "Id": 12,
+    "title": "Mountain Lodge with Ski Access",
+    "description": "Cozy mountain lodge offering direct ski-in/ski-out access to world-class slopes. Features include a grand stone fireplace, game room, hot tub, and stunning mountain views from every room. After a day on the mountain, relax with friends and family in this warm and inviting alpine retreat.",
+    "propertyType": "Lodge",
+    "location": {
+      "address": "567 Alpine Trail",
+      "city": "Park City",
+      "country": "United States",
+      "coordinates": {
+        "lat": 40.6461,
+        "lng": -111.4980
+      }
+    },
+    "pricing": {
+      "nightlyRate": 380,
+      "cleaningFee": 140,
+      "serviceFee": 55,
+      "currency": "USD"
+    },
+    "capacity": {
+      "guests": 10,
+      "bedrooms": 5,
+      "beds": 6,
+      "bathrooms": 4
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1551524164-6cf71746310a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551524164-6e1c18d56d5a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551524164-6e1c18d56d5b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520637736862-4d197d17c11a?w=800&h=600&fit=crop"
+    ],
+    "amenities": ["WiFi", "Fireplace", "Kitchen", "Hot tub", "Parking", "Washer", "TV", "Balcony"],
+    "rating": 4.9,
+    "reviewCount": 158,
+    "host": {
+      "id": "h12",
+      "name": "Mark Johnson",
+      "avatar": "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=100&h=100&fit=crop&crop=face",
+      "joinDate": "October 2016",
+      "verified": true
+    },
+    "availability": {
+      "calendar": {},
+      "minStay": 4,
+      "maxStay": 14
+    }
+  }
+]

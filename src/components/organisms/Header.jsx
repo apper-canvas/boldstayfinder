@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AuthContext } from "../../App";
-import ApperIcon from "@/components/atoms/ApperIcon";
+import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 import Help from "@/components/pages/Help";
 import AuthModal from "@/components/organisms/AuthModal";

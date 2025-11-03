@@ -112,10 +112,10 @@ const Header = () => {
                   <ApperIcon name="User" size={20} className="text-gray-600" />
                 </button>
               )}
-            </div>
+</div>
           </div>
         </div>
-</div>
+      </header>
 
         {/* Mobile Navigation */}
         <div className="md:hidden border-t border-gray-200">
@@ -165,10 +165,9 @@ const Header = () => {
                 <ApperIcon name="LogOut" size={20} />
                 <span className="text-xs">Logout</span>
               </button>
-            )}
+)}
           </nav>
         </div>
-      </header>
 
       {!isAuthenticated && (
         <AuthModal 

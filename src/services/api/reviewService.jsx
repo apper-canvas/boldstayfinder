@@ -4,233 +4,264 @@ import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 import Error from "@/components/ui/Error";
 
-// Mock review data - in production this would come from a database
-const mockReviews = [
-  {
-    Id: 1,
-    propertyId: 1,
-    userId: 'u1',
-    userName: "Sarah M.",
-    userAvatar: "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-    title: "Amazing property with stunning views!",
-    comment: "Amazing property with stunning views! The host was incredibly responsive and the location was perfect for exploring the city. Would definitely stay again.",
-    date: "2024-12-15T10:30:00Z",
-    verified: true,
-    helpful: 8
-  },
-  {
-    Id: 2,
-    propertyId: 1,
-    userId: 'u2',
-    userName: "James L.",
-    userAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-    title: "Clean and comfortable",
-    comment: "Clean, comfortable, and exactly as described. Great amenities and the neighborhood felt very safe. Easy check-in process too.",
-    date: "2024-11-28T14:15:00Z",
-    verified: true,
-    helpful: 12
-  },
-  {
-    Id: 3,
-    propertyId: 1,
-    userId: 'u3',
-    userName: "Maria K.",
-    userAvatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-    rating: 4,
-    title: "Lovely place with great attention to detail",
-    comment: "Lovely place with great attention to detail. Minor issue with WiFi but host resolved it quickly. Overall excellent experience!",
-    date: "2024-10-22T16:45:00Z",
-    verified: true,
-    helpful: 6
-  },
-  {
-    Id: 4,
-    propertyId: 1,
-    userId: 'u4',
-    userName: "David R.",
-    userAvatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-    title: "Exceeded expectations!",
-    comment: "Exceeded expectations! Beautiful space, perfect location, and the host provided excellent local recommendations. Highly recommend.",
-    date: "2024-10-18T09:20:00Z",
-    verified: true,
-    helpful: 15
-  },
-  {
-    Id: 5,
-    propertyId: 1,
-    userId: 'u5',
-    userName: "Emma T.",
-    userAvatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&h=100&fit=crop&crop=face",
-    rating: 4,
-    title: "Great value for money",
-    comment: "Great value for money. The apartment was spotless and had everything we needed. Would stay here again on our next visit.",
-    date: "2024-09-30T11:10:00Z",
-    verified: true,
-    helpful: 9
-  },
-  {
-    Id: 6,
-    propertyId: 1,
-    userId: 'u6',
-    userName: "Alex P.",
-    userAvatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-    title: "Perfect for our weekend getaway",
-    comment: "Perfect for our weekend getaway. The photos don't do it justice - it's even better in person! Great communication from the host.",
-    date: "2024-09-15T13:30:00Z",
-    verified: true,
-    helpful: 11
-  }
-];
-
 class ReviewService {
   constructor() {
-    // Load existing reviews or initialize with mock data
-    const savedReviews = localStorage.getItem('reviews');
-    this.reviews = savedReviews ? JSON.parse(savedReviews) : [...mockReviews];
-  }
-
-  // Save reviews to localStorage (simulating database persistence)
-  _saveReviews() {
-    localStorage.setItem('reviews', JSON.stringify(this.reviews));
-  }
-
-  // Get all reviews for a specific property
-// Get all reviews for a specific property
-  async getByPropertyId(propertyId, options = {}) {
-    await new Promise(resolve => setTimeout(resolve, 200));
-    
-    let propertyReviews = this.reviews
-      .filter(review => review.propertyId === propertyId)
-      .map(review => ({ ...review })); // Return copies
-
-    // Sort by date (newest first) by default
-    const sortBy = options.sortBy || 'date';
-    const sortOrder = options.sortOrder || 'desc';
-    
-    propertyReviews.sort((a, b) => {
-      if (sortBy === 'date') {
-        const dateA = new Date(a.date);
-        const dateB = new Date(b.date);
-        return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
-      } else if (sortBy === 'rating') {
-        return sortOrder === 'desc' ? b.rating - a.rating : a.rating - b.rating;
-      } else if (sortBy === 'helpful') {
-        return sortOrder === 'desc' ? b.helpful - a.helpful : a.helpful - b.helpful;
-      }
-      return 0;
+    // Initialize ApperClient
+    const { ApperClient } = window.ApperSDK;
+    this.apperClient = new ApperClient({
+      apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+      apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
     });
-
-    return {
-      reviews: propertyReviews,
-      totalCount: propertyReviews.length,
-      averageRating: this._calculateAverageRating(propertyReviews)
-    };
+    this.tableName = 'review_c';
   }
 
-// Get reviews summary for a property (used in ReviewsSection)
+  async getByPropertyId(propertyId, options = {}) {
+    try {
+      const params = {
+        fields: [
+          {"field": {"Name": "Name"}},
+          {"field": {"Name": "property_id_c"}},
+          {"field": {"Name": "user_id_c"}},
+          {"field": {"Name": "user_name_c"}},
+          {"field": {"Name": "user_avatar_c"}},
+          {"field": {"Name": "rating_c"}},
+          {"field": {"Name": "title_c"}},
+          {"field": {"Name": "comment_c"}},
+          {"field": {"Name": "date_c"}},
+          {"field": {"Name": "verified_c"}},
+          {"field": {"Name": "helpful_c"}}
+        ],
+        where: [
+          {
+            "FieldName": "property_id_c",
+            "Operator": "EqualTo",
+            "Values": [propertyId.toString()]
+          }
+        ],
+        orderBy: [{"fieldName": "date_c", "sorttype": options.sortOrder === 'asc' ? 'ASC' : 'DESC'}],
+        pagingInfo: {"limit": 50, "offset": 0}
+      };
+
+      const response = await this.apperClient.fetchRecords(this.tableName, params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        return {
+          reviews: [],
+          totalCount: 0,
+          averageRating: 0
+        };
+      }
+
+      const reviews = response.data.map(review => this._formatReview(review));
+      
+      return {
+        reviews: reviews,
+        totalCount: reviews.length,
+        averageRating: this._calculateAverageRating(reviews)
+      };
+    } catch (error) {
+      console.error("Error fetching reviews:", error?.response?.data?.message || error);
+      return {
+        reviews: [],
+        totalCount: 0,
+        averageRating: 0
+      };
+    }
+  }
+
   async getReviewsSummary(propertyId) {
     const result = await this.getByPropertyId(propertyId);
     return result;
   }
 
-  // Create a new review
   async create(reviewData) {
-    await new Promise(resolve => setTimeout(resolve, 300));
-    
-    // Validate required fields
-    if (!reviewData.propertyId || !reviewData.rating || !reviewData.comment) {
-      throw new Error('Property ID, rating, and comment are required');
-    }
+    try {
+      // Validate required fields
+      if (!reviewData.propertyId || !reviewData.rating || !reviewData.comment) {
+        throw new Error('Property ID, rating, and comment are required');
+      }
 
-    if (reviewData.rating < 1 || reviewData.rating > 5) {
-      throw new Error('Rating must be between 1 and 5 stars');
-    }
+      if (reviewData.rating < 1 || reviewData.rating > 5) {
+        throw new Error('Rating must be between 1 and 5 stars');
+      }
 
-    if (reviewData.comment.length < 10) {
-      throw new Error('Review comment must be at least 10 characters long');
-    }
-
-    if (reviewData.comment.length > 1000) {
-      throw new Error('Review comment must be less than 1000 characters');
-    }
-
-    const newId = Math.max(...this.reviews.map(r => r.Id), 0) + 1;
-    const newReview = {
-      Id: newId,
-      propertyId: reviewData.propertyId,
-      userId: reviewData.userId || 'anonymous',
-      userName: reviewData.userName || 'Anonymous User',
-      userAvatar: reviewData.userAvatar || '',
-      rating: reviewData.rating,
-      title: reviewData.title || '',
-      comment: reviewData.comment,
-      date: new Date().toISOString(),
-      verified: reviewData.verified || false,
-      helpful: 0
-    };
-
-    this.reviews.push(newReview);
-    this._saveReviews();
-    return { ...newReview };
-  }
-
-  // Update an existing review
-  async update(id, reviewData) {
-    await new Promise(resolve => setTimeout(resolve, 250));
-    
-    const reviewIndex = this.reviews.findIndex(r => r.Id === id);
-    if (reviewIndex === -1) {
-      throw new Error('Review not found');
-    }
-
-    // Validate fields if they're being updated
-    if (reviewData.rating !== undefined && (reviewData.rating < 1 || reviewData.rating > 5)) {
-      throw new Error('Rating must be between 1 and 5 stars');
-    }
-
-    if (reviewData.comment !== undefined) {
       if (reviewData.comment.length < 10) {
         throw new Error('Review comment must be at least 10 characters long');
       }
+
       if (reviewData.comment.length > 1000) {
         throw new Error('Review comment must be less than 1000 characters');
       }
+
+      const params = {
+        records: [{
+          Name: `Review for Property ${reviewData.propertyId}`,
+          property_id_c: parseInt(reviewData.propertyId),
+          user_id_c: reviewData.userId || 'guest',
+          user_name_c: reviewData.userName || 'Guest User',
+          user_avatar_c: reviewData.userAvatar || '',
+          rating_c: parseInt(reviewData.rating),
+          title_c: reviewData.title || '',
+          comment_c: reviewData.comment,
+          date_c: new Date().toISOString(),
+          verified_c: reviewData.verified || false,
+          helpful_c: 0
+        }]
+      };
+
+      const response = await this.apperClient.createRecord(this.tableName, params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        toast.error(response.message);
+        throw new Error(response.message);
+      }
+
+      if (response.results) {
+        const successful = response.results.filter(r => r.success);
+        const failed = response.results.filter(r => !r.success);
+        
+        if (failed.length > 0) {
+          console.error(`Failed to create review:`, failed);
+          failed.forEach(record => {
+            if (record.message) toast.error(record.message);
+          });
+          throw new Error('Failed to create review');
+        }
+        
+        if (successful.length > 0) {
+          return this._formatReview(successful[0].data);
+        }
+      }
+      
+      throw new Error('Failed to create review');
+    } catch (error) {
+      console.error("Error creating review:", error?.response?.data?.message || error);
+      throw error;
     }
-
-    const updatedReview = {
-      ...this.reviews[reviewIndex],
-      ...reviewData,
-      Id: id // Ensure ID cannot be changed
-    };
-
-    this.reviews[reviewIndex] = updatedReview;
-    this._saveReviews();
-    return { ...updatedReview };
   }
 
-  // Delete a review
+  async update(id, reviewData) {
+    try {
+      const updateData = {
+        Id: parseInt(id)
+      };
+
+      // Only include updateable fields
+      if (reviewData.rating !== undefined) {
+        if (reviewData.rating < 1 || reviewData.rating > 5) {
+          throw new Error('Rating must be between 1 and 5 stars');
+        }
+        updateData.rating_c = parseInt(reviewData.rating);
+      }
+      
+      if (reviewData.title !== undefined) updateData.title_c = reviewData.title;
+      
+      if (reviewData.comment !== undefined) {
+        if (reviewData.comment.length < 10) {
+          throw new Error('Review comment must be at least 10 characters long');
+        }
+        if (reviewData.comment.length > 1000) {
+          throw new Error('Review comment must be less than 1000 characters');
+        }
+        updateData.comment_c = reviewData.comment;
+      }
+      
+      if (reviewData.verified !== undefined) updateData.verified_c = reviewData.verified;
+      if (reviewData.helpful !== undefined) updateData.helpful_c = parseInt(reviewData.helpful);
+
+      const params = {
+        records: [updateData]
+      };
+
+      const response = await this.apperClient.updateRecord(this.tableName, params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        toast.error(response.message);
+        throw new Error(response.message);
+      }
+
+      if (response.results) {
+        const successful = response.results.filter(r => r.success);
+        const failed = response.results.filter(r => !r.success);
+        
+        if (failed.length > 0) {
+          console.error(`Failed to update review:`, failed);
+          failed.forEach(record => {
+            if (record.message) toast.error(record.message);
+          });
+          throw new Error('Failed to update review');
+        }
+        
+        if (successful.length > 0) {
+          return this._formatReview(successful[0].data);
+        }
+      }
+      
+      throw new Error('Failed to update review');
+    } catch (error) {
+      console.error("Error updating review:", error?.response?.data?.message || error);
+      throw error;
+    }
+  }
+
   async delete(id) {
-    await new Promise(resolve => setTimeout(resolve, 200));
-    
-    const reviewIndex = this.reviews.findIndex(r => r.Id === id);
-    if (reviewIndex === -1) {
-      throw new Error('Review not found');
-    }
+    try {
+      const params = { 
+        RecordIds: [parseInt(id)]
+      };
 
-    this.reviews.splice(reviewIndex, 1);
-    this._saveReviews();
-    return true;
+      const response = await this.apperClient.deleteRecord(this.tableName, params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        toast.error(response.message);
+        return false;
+      }
+
+      if (response.results) {
+        const successful = response.results.filter(r => r.success);
+        const failed = response.results.filter(r => !r.success);
+        
+        if (failed.length > 0) {
+          console.error(`Failed to delete review:`, failed);
+          failed.forEach(record => {
+            if (record.message) toast.error(record.message);
+          });
+        }
+        
+        return successful.length > 0;
+      }
+      
+      return false;
+    } catch (error) {
+      console.error("Error deleting review:", error?.response?.data?.message || error);
+      return false;
+    }
   }
 
-  // Calculate average rating for a set of reviews
   _calculateAverageRating(reviews) {
     if (reviews.length === 0) return 0;
     const sum = reviews.reduce((acc, review) => acc + review.rating, 0);
-    return Math.round((sum / reviews.length) * 10) / 10; // Round to 1 decimal place
+    return Math.round((sum / reviews.length) * 10) / 10;
+  }
+
+  _formatReview(dbReview) {
+    return {
+      Id: dbReview.Id,
+      propertyId: parseInt(dbReview.property_id_c) || 0,
+      userId: dbReview.user_id_c || 'guest',
+      userName: dbReview.user_name_c || 'Guest User',
+      userAvatar: dbReview.user_avatar_c || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      rating: parseInt(dbReview.rating_c) || 0,
+      title: dbReview.title_c || '',
+      comment: dbReview.comment_c || '',
+      date: dbReview.date_c || new Date().toISOString(),
+      verified: dbReview.verified_c || false,
+      helpful: parseInt(dbReview.helpful_c) || 0
+    };
   }
 }
 
